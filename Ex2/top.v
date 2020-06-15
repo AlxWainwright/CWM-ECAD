@@ -27,6 +27,6 @@ module mux(a,b,sel,out);
 	input sel;
 	output out;
 
-    assign out=(sel) ? b : a;               
+    assign #5 out=(sel) ? b : a;               
       
 endmodule
