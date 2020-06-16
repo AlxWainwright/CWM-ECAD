@@ -27,29 +27,29 @@ begin
 end
 
 initial begin
-	rst = 0;
-	button = 1;
-	err = 0;
+		rst = 0;
+		button = 1;
+		err = 0;
 	
-	forever 
-	begin
-	#1
-	rst=0;
-	#10
-	if (throw ==0) 
+		forever 
 		begin
-		$display("***Test fail*** no roll");
-		err = 1;
-		end
-	#60
-	rst = 1;
-	if (throw != 3'b001)
-		begin
-		$display("***Test Fail! no reset");
-		err = 1;
+			#1
+			rst=0;
+			#10
+			if (throw ==0) 
+			begin
+			$display("***Test fail*** no roll");
+			err = 1;
+			end
+			#60
+			rst = 1;
+			if (throw != 3'b001)
+			begin
+			$display("***Test Fail! no reset");
+			err = 1;
+			end
 		end
 	end
-
 initial begin 
 	#160
 	if (err ==0)
