@@ -16,3 +16,23 @@
 //  You need to write the whole file.
 //////////////////////////////////////////////////////////////////////////////////
 
+`timescale 1ns / 100ps
+
+module dice(rst,clk,button,throw);
+
+input reg rst, clk, button;
+output throw[2:0];
+
+	always @(posedge clk or posedge rst) 
+begin
+
+		if ((rst)|(throw=3'b000)|(throw=3'b111))
+			 
+			throw <= 3'b001;
+		else
+			if (button)
+				throw <= throw +1;
+			else
+				throw <= 3'b001;	
+			
+end
