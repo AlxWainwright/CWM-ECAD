@@ -23,8 +23,14 @@ module dice(
 input  rst, 
 input clk,
 input button,
-output reg throw[2:0]
+output [2:0] throw
 );
+
+reg [2:0] throw;
+initial 
+begin
+throw = 0;
+end
 	always @(posedge clk or posedge rst) 
 begin
 
