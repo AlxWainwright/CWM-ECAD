@@ -16,6 +16,9 @@ module top_tb(
 	
 	reg clk;
 	reg sel;
+	reg button;
+	wire red, amber,green;
+	wire [2:0] result;
 
 
 //clock
@@ -28,6 +31,7 @@ initial
 
 initial begin
 	sel=0;
+	button=1;
 	#200
 	sel=1;
 	#200
@@ -39,6 +43,6 @@ dicelight top (
 	.clk(clk),
 	.button(button),
 	.sel(sel),
-	.result(result)
+	.result(result[2:0])
 	);
 endmodule

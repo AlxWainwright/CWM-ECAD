@@ -30,7 +30,7 @@ wire red,amber,green;
 dice mydice(rst,clk,button,throw);
 traffic mytraffic(red,amber,green,clk);
 
-mux mysel(throw,{red,amber,green},sel,result);
+mux mysel(throw[2:0],{red,amber,green},sel,result[2:0]);
 
 endmodule
 

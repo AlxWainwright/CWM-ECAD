@@ -22,11 +22,11 @@
 
 module mux(a,b,sel,out);
     
-	input a;
-	input b;
+	input[2:0] a;
+	input[2:0] b;
 	input sel;
-	output out;
+	output[2:0] out;
 
-    assign #5 out=(sel) ? b : a;               
+    assign #5 out=(sel) ? b[2:0] : a[2:0];               
       
 endmodule
