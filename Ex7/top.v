@@ -13,4 +13,25 @@
 //           result[4:0]
 //////////////////////////////////////////////////////////////////////////////////
 
+`timescale 1ns/100ps
 
+module timestable(clk,a,b,read,result);
+
+input clk;
+input [2:0] a;
+input [2:0] b;
+input read;
+
+output [5:0] result;
+
+blk_mem your_instance_name (
+  .clka(clka),    // input wire clka
+  .ena(ena),      // input wire ena
+  .wea(wea),      // input wire [0 : 0] wea
+  .addra(addra),  // input wire [5 : 0] addra
+  .dina(dina),    // input wire [5 : 0] dina
+  .douta(douta)  // output wire [5 : 0] douta
+);
+
+
+endmodule
