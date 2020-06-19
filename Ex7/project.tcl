@@ -21,7 +21,7 @@ create_fileset -constrset -quiet constraints
 
 #Todo: Add your IP here
 create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name blk_mem
-set_property -dict [list CONFIG.Component_Name {blk_mem} CONFIG.Write_Width_A {6} CONFIG.Write_Depth_A {64} CONFIG.Read_Width_A {6} CONFIG.Write_Width_B {6} CONFIG.Read_Width_B {6} CONFIG.Load_Init_File {false}] [get_ips blk_mem]
+set_property -dict [list CONFIG.Component_Name {blk_mem} CONFIG.Write_Width_A {6} CONFIG.Write_Depth_A {64} CONFIG.Read_Width_A {6} CONFIG.Write_Width_B {6} CONFIG.Read_Width_B {6} CONFIG.Load_Init_File {true} CONFIG.Coe_File {../../blk_mem.coe}CONFIG.FILL_Remaining_Memory_Locations {true}] [get_ips blk_mem]
 
 
 read_verilog "top.v"
